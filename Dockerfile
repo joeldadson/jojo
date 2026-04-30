@@ -1,16 +1,1 @@
-FROM eclipse-temurin:21-jdk AS builder
-
-WORKDIR /build
-COPY src/ src/
-RUN javac src/Main.java
-
-FROM eclipse-temurin:21-jre
-
-WORKDIR /app
-COPY --from=builder /build/src/*.class .
-COPY data/ data/
-COPY static/ static/
-
-EXPOSE 8080
-
-CMD sh -c "java -cp . Main --host=0.0.0.0 --port=${PORT:-8080}"
+FROM amazoncorretto:21-alpine`n`nWORKDIR /app`n`nCOPY . .`n`nRUN mkdir -p data`n`nRUN javac -d out/production/bookstore-web src/Main.java`n`nCMD sh -c "java -cp out/production/bookstore-web Main --host=0.0.0.0 --port=${PORT:-10000}"
