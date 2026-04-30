@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: bookstore-web
+    runtime: docker
+    plan: free
+    region: oregon
+    envVars:
+      - key: PORT
+        value: 10000
+    # Note: Free tier does not support persistent disks. 
+    # Data in the /app/data folder will reset on every deploy/restart.
