@@ -1,0 +1,6 @@
+id,title,author,isbn,year,priceCents,quantity,createdAtEpochMs,category
+1,Clean Code,Robert C. Martin,9780132350884,2008,3799,2,1776814125108,
+2,Effective Java,Joshua Bloch,9780134685991,2018,4599,2,1776814125113,
+3,Design Patterns,Erich Gamma et al.,9780201633610,1994,5499,1,1776814125114,
+4,rosary book,Joel J. DADSON,0880454389,2014,2400,595,1776867598063,PRAYER BOOK
+5,rosary,samuel,89456738638,2004,1500,45,1777410948515,PRAYER BOOK

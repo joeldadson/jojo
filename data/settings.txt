@@ -1,0 +1,4 @@
+adminUser=admin
+adminPass=1234
+currentTheme=light
+currentFontSize=14px

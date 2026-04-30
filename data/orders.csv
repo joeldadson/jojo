@@ -1,0 +1,4 @@
+id,bookId,bookTitle,unitPriceCents,quantity,totalCents,customerId,customerName,paymentMethod,status,reference,createdAtEpochMs
+1,1,Clean Code,3799,1,3799,1,Joel jojo Dadson,cash,PAID,,1776815593767
+2,1,Clean Code,3799,1,3799,1,Joel jojo Dadson,cash,PAID,,1776815742620
+3,4,rosary book,2400,5,12000,1,HENRY DADSON,mobile_money,PAID,Mission,1776867865808
