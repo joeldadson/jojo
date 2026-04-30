@@ -1,15 +1,16 @@
-FROM amazoncorretto:21-alpine
+FROM eclipse-temurin:21-jdk AS builder
+
+WORKDIR /build
+COPY src/ src/
+RUN javac src/Main.java
+
+FROM eclipse-temurin:21-jre
 
 WORKDIR /app
+COPY --from=builder /build/src/*.class .
+COPY data/ data/
+COPY static/ static/
 
-# Copy all source code and static/data folders
-COPY . .
+EXPOSE 8080
 
-# Ensure data directory exists so the app doesn't crash on startup
-RUN mkdir -p data
-
-# Compile the Java application
-RUN javac -d out/production/bookstore-web src/Main.java
-
-# Revert out of the application root and use `sh -c` to pass Render's dynamic PORT variable
-CMD sh -c "java -cp out/production/bookstore-web Main --host=0.0.0.0 --port=${PORT:-10000}"
+CMD sh -c "java -cp . Main --host=0.0.0.0 --port=${PORT:-8080}"
